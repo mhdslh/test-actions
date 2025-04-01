@@ -16,6 +16,6 @@ jobs:
         pwd
         ls
     - name: commit
-      run: 
+      run: |
         echo "Commit SHA: $(git rev-parse HEAD)"
         echo "Commit SHA: ${{ github.sha }}"
