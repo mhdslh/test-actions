@@ -1,0 +1,21 @@
+name: Pre-merge Checks
+
+on: push
+
+jobs:
+  setup:
+    name: env setup
+    runs-on: ubuntu-latest
+    steps:
+    - name: greeting
+      run: echo "Welcome!"
+    - name: checkout
+      uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
+    - name: environment
+      runs: |
+        pwd
+        ls
+    - name: commit
+      runs: 
+        echo "Commit SHA: $(git rev-parse HEAD)"
+        echo "Commit SHA: ${{ github.sha }}"
